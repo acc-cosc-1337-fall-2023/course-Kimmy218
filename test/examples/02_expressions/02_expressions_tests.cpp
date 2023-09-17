@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "casting.h"
 #include "data_type_size.h"
+#include "constants.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -38,4 +39,9 @@ TEST_CASE("Test character is 1byte wSizeOf")
 	REQUIRE(get_char_data_size('9') ==1);
 	REQUIRE(get_char_data_size('#') == 1);
 
+}
+
+TEST_CASE(" Test program with constants get area of circle")
+{
+	REQUIRE(get_area_of_circle(10) == 314.159);
 }
