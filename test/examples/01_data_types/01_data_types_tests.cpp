@@ -30,6 +30,8 @@ TEST_CASE("Veriy Test the add to double 2 function", "testing the decimal incons
 
 /*test case add_to_double_2 with 1 as parameter*/
 
+
+
 /*test case char test ASCII values */
 TEST_CASE("Test get_char ascii value function", "testing char to integer conversion")
 {
@@ -38,5 +40,47 @@ TEST_CASE("Test get_char ascii value function", "testing char to integer convers
 	REQUIRE(98 == get_char_ascii_value('b'));
 }
 
+
+
 /*test case string test ASCII values Joe characters are equal to 74, 111, and 101*/
 
+/*test boolean operators*/
+TEST_CASE("Test the and operator", "only T T returns T")
+{
+	REQUIRE(get_and_result(true, true) == true);
+	REQUIRE(get_and_result(true, false) == false);
+	REQUIRE(get_and_result(false, true) == false);
+	REQUIRE(get_and_result(false, false) == false);
+}
+
+TEST_CASE("Test the OR operator", "only F F returns F")
+{
+	REQUIRE(get_or_result(true, true) == true);
+	REQUIRE(get_or_result(true, false) == true);
+	REQUIRE(get_or_result(false, true) == true);
+	REQUIRE(get_or_result(false, false) == false);
+}
+
+TEST_CASE("Test the NOT operator", "negate value")
+{
+	REQUIRE(get_bool_negation(true)== false);
+	REQUIRE(get_bool_negation(false) == true);
+}
+
+TEST_CASE("Test the boolean operators order of precedence", "order of operations")
+{
+	REQUIRE(get_order_of_precedence_result(true, true, true) == true);
+	REQUIRE(get_order_of_precedence_result(true, true, false) == false);
+}
+
+TEST_CASE("Test the Consonants using the OR operators ", "Is the letter a consonant")
+{
+	REQUIRE(is_letter_a_consonant('a') == false);
+	REQUIRE(is_letter_a_consonant('z') == true);
+}
+
+TEST_CASE("Test is number in range ", "using OR")
+{
+	REQUIRE(is_number_not_in_range(0, 1, 10) == true);
+	REQUIRE(is_number_not_in_range(5, 1, 10) == false);
+}
